@@ -1,6 +1,6 @@
 namespace: scottTest
 flow:
-  name: myFirstDesignerFlow
+  name: AWS EC2 Test
   workflow:
     - describe_instances:
         do:
