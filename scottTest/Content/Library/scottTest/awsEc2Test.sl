@@ -1,6 +1,6 @@
 namespace: scottTest
 flow:
-  name: AWS EC2 Test
+  name: awsEc2Test
   workflow:
     - describe_instances:
         do:
