@@ -9,6 +9,9 @@ flow:
             - credential:
                 value: myyUpdg7MUw+l8qNVMKZTCmt+NLkn+hrQYp+yyPC
                 sensitive: true
+            - filter_names_string: scott
+        publish:
+          - return_result
         navigate:
           - SUCCESS: SUCCESS
           - FAILURE: on_failure
