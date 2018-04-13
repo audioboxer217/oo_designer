@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="93bdeb27-974c-4ec0-a240-7eb44253218d">
+  <annotation></annotation>
+  <name>Parse SA XML Content</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="35a7c197-08c1-49b3-a3ff-408d19a4a4f4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>document</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="857e5868-bd6a-47d5-84b0-1efbaa80e8d4">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="10350a66-0f8d-4fd9-ad21-8b9825a73bd9">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4f0583ac-65c5-4f60-87e8-f3333e181af6">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="b6b97688-ac08-4db0-b994-71fcbde7d2b1">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="a5dd9b7d-6fd9-4edd-8483-481b64b0ade8">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4763107e-526f-4536-8a00-bd05c7a0e207">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="864f7dd9-610b-42dc-bdc0-d2f21ceeea1f">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.coda_global</groupId>
+    <artifactId>oo-sa-xml-to-json-plugin</artifactId>
+    <version>1.0.8</version>
+    <actionName>Parse SA XML Content</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>
